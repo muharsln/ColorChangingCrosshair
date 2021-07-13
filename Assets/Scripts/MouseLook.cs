@@ -7,7 +7,6 @@ public class MouseLook : MonoBehaviour
     [Range(0.1f, 10f)]
     [SerializeField] private float _sensitive;
     private Vector2 _rot;
-
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -25,5 +24,4 @@ public class MouseLook : MonoBehaviour
         _rot.y += Input.GetAxisRaw("Mouse Y") * _sensitive * 100 * Time.deltaTime;
         transform.localRotation = Quaternion.Euler(-_rot.y, _rot.x, 0);
     }
-
 }
